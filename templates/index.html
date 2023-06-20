@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT-3 Email Responses</title>
+</head>
+<body>
+    <form method="POST">
+        <label for="email">Email:</label><br>
+        <textarea id="email" name="email"></textarea><br>
+        <input type="submit" value="Generate Responses">
+    </form>
+
+    {% if response1 %}
+    <h2>Response 1</h2>
+    <p>{{ response1 }}</p>
+    {% endif %}
+
+    {% if response2 %}
+    <h2>Response 2</h2>
+    <p>{{ response2 }}</p>
+    {% endif %}
+
+    {% if response3 %}
+    <h2>Response 3</h2>
+    <p>{{ response3 }}</p>
+    {% endif %}
+</body>
+</html>
