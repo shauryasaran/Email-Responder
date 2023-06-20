@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ChatGPT-3 Email Responses</title>
+    <title>OpenAI Application</title>
 </head>
 <body>
+    <h1>Welcome, {{ current_user.email }}!</h1>
     <form method="POST">
-        <label for="email">Email:</label><br>
-        <textarea id="email" name="email"></textarea><br>
-        <input type="submit" value="Generate Responses">
+        <input type="text" name="email" placeholder="Enter your email..." required>
+        <input type="submit" value="Submit">
     </form>
-
-    {% if response1 %}
-    <h2>Response 1</h2>
-    <p>{{ response1 }}</p>
+    {% if responses %}
+        <h2>Responses:</h2>
+        {% for response, sentiment in responses_sentiments %}
+            <p>{{ response }} (Sentiment: {{ sentiment }})</p>
+        {% endfor %}
     {% endif %}
-
-    {% if response2 %}
-    <h2>Response 2</h2>
-    <p>{{ response2 }}</p>
-    {% endif %}
-
-    {% if response3 %}
-    <h2>Response 3</h2>
-    <p>{{ response3 }}</p>
-    {% endif %}
+    <a href="{{ url_for('logout') }}">Logout</a>
 </body>
 </html>
