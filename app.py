@@ -8,7 +8,7 @@ from textblob import TextBlob
 app = Flask(__name__)
 
 # Configure database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///responses.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = ''
 app.config['SECRET_KEY'] = ''
 
 # Initialize SQLAlchemy and LoginManager
