@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # Configure database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///responses.db'
-app.config['SECRET_KEY'] = 'Your-Secret-Key'
+app.config['SECRET_KEY'] = ''
 
 # Initialize SQLAlchemy and LoginManager
 db = SQLAlchemy(app)
@@ -17,7 +17,7 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 # Input API key here
-openai.api_key = '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'
+openai.api_key = ''
 
 # Database model
 class User(UserMixin, db.Model):
